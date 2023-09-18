@@ -1,0 +1,15 @@
+create table if not exists cursos(
+nome varchar(30) not null unique,#unique n pode ser usado como chave primaria, mas ele nao permite que seja criado um nome igual oa que ja existe
+descricao text, # para escrever textos estensos e com páragrafo
+carga int unsigned,
+totaulas int unsigned,
+ano year  default '2016' #default quer dizer que se n colocar nada de ano ele é por padrao 2016
+)default charset=utf8;
+
+desc cursos;
+
+alter table cursos
+add column idcurso int first;
+
+alter table cursos
+add primary key (idcurso);
